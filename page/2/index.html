@@ -69,6 +69,205 @@
     <div id="content">
       
   
+    <article id="post-2.只出现一次的数字" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 class="article-title" itemprop="name">
+      <a href="/2022/02/20/2.%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97/">2.只出现一次的数字</a>
+      
+        
+      
+    </h2>
+  
+
+
+        <div class="article-meta">
+          <time class="article-date" datetime="2022-02-19T16:00:00.000Z" itemprop="datePublished">2022-02-20</time>
+
+          
+            × <span class="article-word-count">629 words</span>
+            
+            × <span class="article-time-to-read">2 minutes</span>
+            
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p>说明：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
+<p>示例 1:</p>
+<p>输入: [2,2,1] 输出: 1 。</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number">https://leetcode-cn.com/problems/single-number</a></p>
+<h3 id="方法1、集合set"><a href="#方法1、集合set" class="headerlink" title="方法1、集合set"></a>方法1、集合set</h3><p><strong>执行用时：32 ms</strong></p>
+<p>时间复杂度：O()</p>
+<p>空间复杂度：O(n)，其中 n 是数组长度。</p>
+<p>思路总结：使用集合存储数字。遍历数组，如果集合中存在该数，删除；如果不存在，加入。最后只剩下只出现一次的数，返回。</p>
+<p>注意：利用set不能放重复元素的特性来做</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">singleNumber</span>(<span class="params">self, nums</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]  [2,2,1]</span></span><br><span class="line"><span class="string">        :rtype: int  暴力解法    1</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        s = <span class="built_in">set</span>()</span><br><span class="line">        <span class="keyword">for</span> i, num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">in</span> s:</span><br><span class="line">                s.remove(num)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                s.add(num)</span><br><span class="line">        l=<span class="built_in">list</span>(s)  <span class="comment"># 集合转换为列表是读取集合元素的必要步骤</span></span><br><span class="line">        <span class="keyword">return</span> l[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法2、哈希表"><a href="#方法2、哈希表" class="headerlink" title="方法2、哈希表"></a>方法2、哈希表</h3><p><strong>执行用时： 28ms</strong></p>
+<p>时间复杂度：O()</p>
+<p>空间复杂度：O(n)</p>
+<p>思路总结：存入哈希表，key为数组的值，value为出现的次数。最后取出哈希表中次数（value）为1的key。</p>
+<p>注意：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">singleNumber</span>(<span class="params">self, nums</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]  [2,2,1]</span></span><br><span class="line"><span class="string">        :rtype: int  哈希表     1</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        hashtable = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> i, num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">in</span> hashtable:</span><br><span class="line">                hashtable[num] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hashtable[num] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> hashtable:</span><br><span class="line">            <span class="keyword">if</span> hashtable[j]==<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> j</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="方法3、位运算，异或运算-⊕"><a href="#方法3、位运算，异或运算-⊕" class="headerlink" title="方法3、位运算，异或运算 ⊕"></a>方法3、位运算，异或运算 ⊕</h3><p><strong>执行用时： 24ms</strong></p>
+<p>时间复杂度：O(n)</p>
+<p>空间复杂度：O(1)</p>
+<p>思路总结：自身异或=0，与0异或=本身。重复的两个数先两两异或=0；再和只出现一次的数异或=只出现一次的数本身。</p>
+<p>注意：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">singleNumber</span>(<span class="params">self, nums</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]  [2,2,1]</span></span><br><span class="line"><span class="string">        :rtype: int  异或     1</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> reduce(<span class="keyword">lambda</span> x,y:x ^ y, nums)</span><br></pre></td></tr></table></figure>
+
+<p>reduce()，对所有元素进行累积</p>
+<h3 id="方法4、求和相减"><a href="#方法4、求和相减" class="headerlink" title="方法4、求和相减"></a>方法4、求和相减</h3><p><strong>执行用时：  ms</strong></p>
+<p>时间复杂度：O()</p>
+<p>空间复杂度：O()</p>
+<p>思路总结：数组数据存入一个新的集合(集合不可重复)。对集合所有数据求和，再×2倍；对原数组所有数据求和。即set*2-list=只出现一次的数据。</p>
+<p>注意：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">singleNumber</span>(<span class="params">self, nums</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]  [2,2,1]</span></span><br><span class="line"><span class="string">        :rtype: int   求和相减    1</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        s = <span class="built_in">set</span>(nums)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">sum</span>(s)*<span class="number">2</span>-<span class="built_in">sum</span>(nums)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+  </div>
+</article>
+
+
+
+  
+    <article id="post-1.两数之和" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 class="article-title" itemprop="name">
+      <a href="/2022/02/19/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">1.两数之和</a>
+      
+        
+      
+    </h2>
+  
+
+
+        <div class="article-meta">
+          <time class="article-date" datetime="2022-02-18T16:00:00.000Z" itemprop="datePublished">2022-02-19</time>
+
+          
+            × <span class="article-word-count">411 words</span>
+            
+            × <span class="article-time-to-read">1 minute</span>
+            
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p>示例 1：</p>
+<p>输入：nums = [2,7,11,15], target = 9 输出：[0,1] 解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。 </p>
+<p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum">https://leetcode-cn.com/problems/two-sum</a></p>
+<h3 id="方法1、暴力搜索"><a href="#方法1、暴力搜索" class="headerlink" title="方法1、暴力搜索"></a>方法1、暴力搜索</h3><p><strong>执行用时：20 ms</strong></p>
+<p>时间复杂度：O(n^2)</p>
+<p>空间复杂度：O(1)</p>
+<p>思路总结：循环遍历两次list，分别判断相加是否为target。</p>
+<p>注意：for循环需要range(len)，所以需要先得到list的len</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums, target</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]   nums=[2,7,11,15]</span></span><br><span class="line"><span class="string">        :type target: int       target = 9</span></span><br><span class="line"><span class="string">        :rtype: List[int]       暴力搜索 brute force way</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        size = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(size):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>, size):</span><br><span class="line">                <span class="keyword">if</span> nums[i]+nums[j]==target:</span><br><span class="line">                    <span class="keyword">return</span> [i,j]</span><br><span class="line">        <span class="keyword">return</span> []</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、哈希表"><a href="#2、哈希表" class="headerlink" title="2、哈希表"></a>2、哈希表</h3><p><strong>执行用时：16 ms</strong></p>
+<p>时间复杂度：O()</p>
+<p>空间复杂度：O()</p>
+<p>思路总结：构建hash表，如hash表中有target-num，直接取；如果没有，先存入。存入的hash表，key=数组的值；value=数组的下标。</p>
+<p>注意：for循环需要range(len)，所以需要先得到list的len</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums, target</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]   nums=[2,7,11,15]</span></span><br><span class="line"><span class="string">        :type target: int       target = 9</span></span><br><span class="line"><span class="string">        :rtype: List[int]       哈希表 hash table</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        hashtable = <span class="built_in">dict</span>()  <span class="comment"># 构建hash table</span></span><br><span class="line">        <span class="keyword">for</span> i,num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> target - num <span class="keyword">in</span> hashtable:</span><br><span class="line">                <span class="keyword">return</span> [hashtable[target-num], i]</span><br><span class="line">            hashtable[nums[i]] = i</span><br><span class="line">        <span class="keyword">return</span> []</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+  </div>
+</article>
+
+
+
+  
+    <article id="post-短暂离家" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 class="article-title" itemprop="name">
+      <a href="/2022/02/17/%E7%9F%AD%E6%9A%82%E7%A6%BB%E5%AE%B6/">短暂离家</a>
+      
+        
+      
+    </h2>
+  
+
+
+        <div class="article-meta">
+          <time class="article-date" datetime="2022-02-16T16:00:00.000Z" itemprop="datePublished">2022-02-17</time>
+
+          
+            × <span class="article-word-count">809 words</span>
+            
+            × <span class="article-time-to-read">2 minutes</span>
+            
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <p>启程回学校。漫天雪飘，高速隧道。浪漫又凄凄。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/dCwhicdySicfPT9CJAIic13O8JPj75F1TKpzDeOZVXs8AyA6vNZCS1BpFhMeFTc2432vUgAfIdvqXazmpHicnSvNww/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>舍不得啊！</p>
+<p>在学校，踩着九点早餐准时谢幕的档口，匆忙抢一些冷透了的牛肉包，就着速溶黑芝麻糊勉强入口。</p>
+<p>在家里，虽然早午餐总是恰巧碰在了一起，但是每一次都有热腾腾的饭菜，忍不住多吃几碗吃一顿就少一顿的饭。</p>
+<p>在学校想吃个水果吧，要骑着小电驴去北亭采购，纠结一番，选择的最佳标准就是: 不用剥皮，方便吃就行。</p>
+<p>在家里，你会被建议吃一些复杂的水果，要剥皮？不存在的，只需要你点一点头，削好皮的水果就递在你眼前了，果核往桌上一放就会自动消失。</p>
+<p>在学校泡脚这种复杂的活真是少见，烧水，备桶，加盐，兑冷水，时刻准备着加热…反正一年泡不到两次吧…</p>
+<p>在家里，你会被提议泡个脚，只要你点一点头，在看电视的空挡，热腾腾的泡脚水不知什么时候已在脚边，实在是惭愧，自己才是那个“巨婴”吧。</p>
+<p>妈妈睡眠不好，胃口极好。</p>
+<p>我担心她，拖她去看睡眠障碍医生，又担心她日益见长的肚腩对膝盖沉重的负担，和她一起践行健康饮食，减少碳水，督促她每天做一分钟平板支撑。</p>
+<p>妈妈说最近睡眠不错，没什么运动量也一直在平稳掉秤。</p>
+<p>老爸牙疼，牙结石臭气熏天，我在试图说服他去洗个牙，但他有他的一套“处事准则”，不可轻易动摇。我用自己的洗牙体验，引经据典，旁敲侧击的告诉他洗牙的好处。</p>
+<p>他在动摇，也许明年回来就要成功击溃他内心的城墙。</p>
+<p>最喜欢的是不落雨的时候，一家人的默契是一定要出去散个步。</p>
+<p>俺们家是犬系动物，非得出去溜溜，不然闷得慌。</p>
+<p>踏着湖边的大好景色，一直走下去，永远不会腻。</p>
+<p>湖景不像大海，大海是浅蓝浅蓝的，一眼望不到边。也不像深山里的九寨沟，是清澈见底的浅滩碧绿。千岛湖的水是望不穿的翡翠般的深绿，矮山远近重叠，小岛错落有致，夕阳打在上面是少女粉色的，粉的发紫。</p>
+<p>小时候我总好奇，跑到湖边捧起一手，“翡翠”就不见了，只看得到清晰的掌纹。</p>
+<p>按理来说，此情此景，从小在这长大的我早该厌倦了罢，就像厌倦了朝九晚五和一层不变的生活。</p>
+<p>可偏偏是每望一次都有一次的欣喜和平静。这叫人如何舍得！</p>
+<p>不管自己多大，不管走的多远，在父母眼里始终是个生活不能自理，不会照顾自己的傻瓜。</p>
+<p>感谢爸爸妈妈的温柔以待，以身作则，让我更加懂得如何照顾一个人，如果表达自然流露，奔涌而出，温润如水的爱意。</p>
+
+      
+    </div>
+    
+    
+    
+  </div>
+</article>
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemprop="blogPost" itemscope>
   <div class="article-inner">
     

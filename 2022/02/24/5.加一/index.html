@@ -19,15 +19,15 @@
 <link rel="stylesheet" href="/css/highlight.css">
 
   
-  <meta name="description" content="方法1、考虑特殊情况，末尾是9思路： 1、末尾无9，直接+1；2、末尾多个9，找最前面不是9的数+1，之后的数置零；3、数组全是9，返回一个新数组，首位&#x3D;1，其余&#x3D;0 时间复杂度：O(n)O(n)，其中 nn 是数组 \textit{digits}digits 的长度。 空间复杂度：O(1)O(1)。返回值不计入空间复杂度。 执行用时：32 ms 注意：逆序遍历 1234567891011clas">
+  <meta name="description" content="方法1、考虑特殊情况，末尾是9思路： 1、末尾无9，直接+1；2、末尾多个9，找最前面不是9的数+1，之后的数置零；3、数组全是9，返回一个新数组，首位&#x3D;1，其余&#x3D;0 时间复杂度：O(n)O(n)，其中 nn 是数组 \textit{digits}digits 的长度。 空间复杂度：O(1)O(1)。返回值不计入空间复杂度。 执行用时：32 ms 注意：逆序遍历，反序遍历 123456789101">
 <meta property="og:type" content="article">
 <meta property="og:title" content="加一">
 <meta property="og:url" content="https://yunbujian.github.io/2022/02/24/5.%E5%8A%A0%E4%B8%80/index.html">
 <meta property="og:site_name" content="☁ YunBJ">
-<meta property="og:description" content="方法1、考虑特殊情况，末尾是9思路： 1、末尾无9，直接+1；2、末尾多个9，找最前面不是9的数+1，之后的数置零；3、数组全是9，返回一个新数组，首位&#x3D;1，其余&#x3D;0 时间复杂度：O(n)O(n)，其中 nn 是数组 \textit{digits}digits 的长度。 空间复杂度：O(1)O(1)。返回值不计入空间复杂度。 执行用时：32 ms 注意：逆序遍历 1234567891011clas">
+<meta property="og:description" content="方法1、考虑特殊情况，末尾是9思路： 1、末尾无9，直接+1；2、末尾多个9，找最前面不是9的数+1，之后的数置零；3、数组全是9，返回一个新数组，首位&#x3D;1，其余&#x3D;0 时间复杂度：O(n)O(n)，其中 nn 是数组 \textit{digits}digits 的长度。 空间复杂度：O(1)O(1)。返回值不计入空间复杂度。 执行用时：32 ms 注意：逆序遍历，反序遍历 123456789101">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-24T02:37:53.247Z">
-<meta property="article:modified_time" content="2022-02-24T02:56:36.890Z">
+<meta property="article:modified_time" content="2022-03-03T04:40:02.575Z">
 <meta property="article:author" content="云不见">
 <meta name="twitter:card" content="summary"><meta name="generator" content="Hexo 5.4.1"></head>
 
@@ -87,7 +87,7 @@
           <time class="article-date" datetime="2022-02-24T02:37:53.247Z" itemprop="datePublished">2022-02-24</time>
 
           
-            × <span class="article-word-count">290 words</span>
+            × <span class="article-word-count">294 words</span>
             
             × <span class="article-time-to-read">1 minute</span>
             
@@ -103,7 +103,7 @@
 <p>时间复杂度：O(n)O(n)，其中 nn 是数组 \textit{digits}digits 的长度。</p>
 <p>空间复杂度：O(1)O(1)。返回值不计入空间复杂度。</p>
 <p>执行用时：32 ms</p>
-<p>注意：逆序遍历</p>
+<p>注意：逆序遍历，反序遍历</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">plusOne</span>(<span class="params">self, digits: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 考虑特殊情况 </span></span><br><span class="line">        l = <span class="built_in">len</span>(digits)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(l-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> digits[i]!=<span class="number">9</span>:</span><br><span class="line">                digits[i]+=<span class="number">1</span></span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>,l):</span><br><span class="line">                    digits[j]=<span class="number">0</span></span><br><span class="line">                <span class="keyword">return</span> digits</span><br><span class="line">        <span class="keyword">return</span> [<span class="number">1</span>]+[<span class="number">0</span>]*l</span><br></pre></td></tr></table></figure>
 
 
