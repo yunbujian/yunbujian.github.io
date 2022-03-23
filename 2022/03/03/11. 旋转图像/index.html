@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="算法打卡 人生大纲" />
+    <meta name="description" content="My Blog." />
+    
+    <title>
+      11、旋转图像 - ☁ YunBJ
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="☁ YunBJ" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%951%E3%80%81%E4%BD%BF%E7%94%A8%E8%BE%85%E5%8A%A9%E6%95%B0%E7%BB%84"><span class="toc-text">方法1、使用辅助数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%952%E3%80%81%E5%8E%9F%E5%9C%B0%E6%97%8B%E8%BD%AC"><span class="toc-text">方法2、原地旋转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%953%E3%80%81%E8%A7%A3%E5%8E%8B%E3%80%81%E9%80%86%E5%BA%8F%E5%8F%96%E5%80%BC"><span class="toc-text">方法3、解压、逆序取值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%954%E3%80%81%E6%B0%B4%E5%B9%B3%E7%BF%BB%E8%BD%AC%EF%BC%8C%E5%AF%B9%E8%A7%92%E7%BA%BF%E7%BF%BB%E8%BD%AC"><span class="toc-text">方法4、水平翻转，对角线翻转</span></a></li></ol></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/friends" class="">
+          友链
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author"></div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author"></div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/friends" class="">
+            友链
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/yunbujian" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/" target="_block">
+              <span class="iconfont icon-instagram"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">11、旋转图像</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2022/03/03</span>
+        </span>
+
+        
+
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/数组">数组</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><h2 id="方法1、使用辅助数组"><a href="#方法1、使用辅助数组" class="headerlink" title="方法1、使用辅助数组"></a>方法1、使用辅助数组</h2><p>思路：找规律。发现第i行第j列数，旋转之后到达第j行倒数第i列。得到等式：$m[j][l-i-1]=m[i][j]$</p>
+<p>时间复杂度：O(n^2^)。n为矩阵边长。</p>
+<p>空间复杂度：O(n^2^)。需要构造辅助数组。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">rotate</span>(<span class="params">self, matrix: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># m = copy.deepcopy(matrix)  # 深拷贝，改变新m不会导致同时改变原matrix</span></span><br><span class="line">        l = <span class="built_in">len</span>(matrix)</span><br><span class="line">        m = [[<span class="number">0</span>]*l <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(l)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(l-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,l):  <span class="comment"># 正向遍历</span></span><br><span class="line">                m[j][l-<span class="number">1</span>-i] = matrix[i][j]  <span class="comment"># 找规律，第i行第j列的数正好转到了第j行倒数第i列</span></span><br><span class="line">        matrix[:] = m</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="方法2、原地旋转"><a href="#方法2、原地旋转" class="headerlink" title="方法2、原地旋转"></a>方法2、原地旋转</h2><p>思路：观察关键等式：$m[j][l-i-1]=m[i][j]$，不断的旋转，得到</p>
+<p>从下旋转到上，发现四个等式一循环。</p>
+<p>$m[i][j]=m[l-j-1][i]$</p>
+<p>$m[l-j-1][i]=m[l-i-1][l-j-1]$</p>
+<p>$m[l-i-1][l-j-1]=m[j][l-i-1]$</p>
+<p>$m[j][l-i-1]=m[i][j]$</p>
+<p>时间复杂度：O(n^2^)。遍历$[n/2]*[(n+1)/2]=O(n^2)$</p>
+<p>空间复杂度：O(1)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">rotate</span>(<span class="params">self, matrix: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 原地旋转</span></span><br><span class="line">        n = <span class="built_in">len</span>(matrix)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n//<span class="number">2</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>((n+<span class="number">1</span>)//<span class="number">2</span>):</span><br><span class="line">                matrix[i][j], matrix[n-j-<span class="number">1</span>][i], matrix[n-i-<span class="number">1</span>][n-j-<span class="number">1</span>], matrix[j][n-i-<span class="number">1</span>] = matrix[n-j-<span class="number">1</span>][i], matrix[n-i-<span class="number">1</span>][n-j-<span class="number">1</span>], matrix[j][n-i-<span class="number">1</span>], matrix[i][j]</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:/Users/walkontheway/AppData/Roaming/Typora/typora-user-images/image-20220303135441950.png" alt="image-20220303135441950"></p>
+<h2 id="方法3、解压、逆序取值"><a href="#方法3、解压、逆序取值" class="headerlink" title="方法3、解压、逆序取值"></a>方法3、解压、逆序取值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">rotate</span>(<span class="params">self, matrix: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 解压，相当于转置；然后每行逆序取值。</span></span><br><span class="line">        matrix[:] = <span class="built_in">list</span>(<span class="built_in">zip</span>(*matrix))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(matrix)):</span><br><span class="line">            matrix[i] = matrix[i][::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;a = [1,2,3]</span><br><span class="line">&gt;&gt;&gt; b = [4,5,6]</span><br><span class="line">&gt;&gt;&gt; zipped = zip(a,b)     # 打包为元组的列表</span><br><span class="line">[(1, 4), (2, 5), (3, 6)]</span><br><span class="line">&gt;&gt;&gt; zip(*zipped)          # *zipped 可理解为解压，返回二维矩阵式</span><br><span class="line">[(1, 2, 3), (4, 5, 6)]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>[::-1] 顺序相反操作，逆序取值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&#x27;python&#x27;</span></span><br><span class="line">b=a[::-<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(b) <span class="comment">#nohtyp</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="方法4、水平翻转，对角线翻转"><a href="#方法4、水平翻转，对角线翻转" class="headerlink" title="方法4、水平翻转，对角线翻转"></a>方法4、水平翻转，对角线翻转</h2><p>思路：水平翻转：$m[n-i-1][j]=m[i][j]$</p>
+<p>主对角线翻转：$m[j][i]=m[i][j]$</p>
+<p>联立方程正好为关键等式：$m[j][n-i-1]=m[i][j]$</p>
+<p>时间复杂度：O(n^2^)。每次翻转需要遍历一半的数。</p>
+<p>空间复杂度：O(1)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">rotate</span>(<span class="params">self, matrix: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 水平翻转，主对角线翻转，正好为关键等式。</span></span><br><span class="line">        n = <span class="built_in">len</span>(matrix)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n//<span class="number">2</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                matrix[n-i-<span class="number">1</span>][j], matrix[i][j] = matrix[i][j], matrix[n-i-<span class="number">1</span>][j]</span><br><span class="line">        <span class="comment"># 主对角线翻转</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i):</span><br><span class="line">                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]</span><br></pre></td></tr></table></figure>
+
+
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2022/03/04/12.%20%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/">12、反转字符串</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2022/03/02/10.%20%E8%BD%AE%E8%BD%AC%E6%95%B0%E7%BB%84/">10、轮转数组</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="https://yunbujian.github.io">云不见</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="https://yunbujian.github.io/2022/03/03/11.%20%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/">https://yunbujian.github.io/2022/03/03/11.%20%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="https://yunbujian.github.io">云不见</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="https://yunbujian.github.io">云不见</a> Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> |
+            <a target="_blank" rel="noopener" href="https://github.com/shixiaohu2206/hexo-theme-huhu">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

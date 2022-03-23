@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="算法打卡 人生大纲" />
+    <meta name="description" content="My Blog." />
+    
+    <title>
+      14、字符串中的第一个唯一字符 - ☁ YunBJ
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="☁ YunBJ" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%951%E3%80%81%E5%93%88%E5%B8%8C%E8%A1%A8%E5%AD%98%E5%82%A8%E5%AD%97%E7%AC%A6%E9%A2%91%E6%AC%A1"><span class="toc-text">方法1、哈希表存储字符频次</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%952%E3%80%81%E5%93%88%E5%B8%8C%E8%A1%A8%E5%AD%98%E5%82%A8%E5%AD%97%E7%AC%A6%E7%B4%A2%E5%BC%95"><span class="toc-text">方法2、哈希表存储字符索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%953%E3%80%81%E9%98%9F%E5%88%97"><span class="toc-text">方法3、队列</span></a></li></ol></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/friends" class="">
+          友链
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author"></div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author"></div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/friends" class="">
+            友链
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/yunbujian" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/" target="_block">
+              <span class="iconfont icon-instagram"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">14、字符串中的第一个唯一字符</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2022/03/07</span>
+        </span>
+
+        
+
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/字符串">字符串</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个字符串 s ，找到 它的<strong>第一个不重复的字符</strong>，并返回它的索引 。如果不存在，则返回 -1 。</p>
+<p>示例 1：<br>输入: s = “leetcode”<br>输出: 0</p>
+<p>示例 2:<br>输入: s = “loveleetcode”<br>输出: 2<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/first-unique-character-in-a-string">https://leetcode-cn.com/problems/first-unique-character-in-a-string</a></p>
+<h2 id="方法1、哈希表存储字符频次"><a href="#方法1、哈希表存储字符频次" class="headerlink" title="方法1、哈希表存储字符频次"></a>方法1、哈希表存储字符频次</h2><p>使用哈希表存储字符出现的次数。</p>
+<p>思路：先遍历一次，得到所有字符出现的次数。（这个用内置函数<code>collections.Counter()</code>即可。）</p>
+<p>再遍历一次，直接返回第一次出现1次的字符的索引。遍历完毕还没有符合的字符，就返回-1。</p>
+<p>时间复杂度：O(n)。遍历两次。2n。</p>
+<p>空间复杂度：$O(|\Sigma|)$，其中 $\Sigma$ 是字符集，在本题中 s 只包含小写字母，因此 $|\Sigma| \leq 26$。我们需要 $O(|\Sigma|)$的空间存储哈希映射。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">firstUniqChar</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        co = collections.Counter(s)</span><br><span class="line">        <span class="keyword">for</span> i,x <span class="keyword">in</span> <span class="built_in">enumerate</span>(s):</span><br><span class="line">            <span class="keyword">if</span> co[x]==<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="方法2、哈希表存储字符索引"><a href="#方法2、哈希表存储字符索引" class="headerlink" title="方法2、哈希表存储字符索引"></a>方法2、哈希表存储字符索引</h2><p>思路：构建空字典。第一次遍历，得到所有字符对应的索引。如果字符已存在于字典，对应字典值改为-1。</p>
+<p>第二次遍历字典，直接返回第一个字典值不为-1的值。遍历完还没有符合的值，返回-1。</p>
+<p>时间复杂度：同1</p>
+<p>空间复杂度：同1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">firstUniqChar</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 哈希表存储字符索引</span></span><br><span class="line">        di = <span class="built_in">dict</span>()</span><br><span class="line">        <span class="keyword">for</span> i,x <span class="keyword">in</span> <span class="built_in">enumerate</span>(s):</span><br><span class="line">            <span class="keyword">if</span> x <span class="keyword">in</span> di:</span><br><span class="line">                di[x]=-<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                di[x]=i</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> di:</span><br><span class="line">            <span class="keyword">if</span> di[k] != -<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> di[k]</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="方法3、队列"><a href="#方法3、队列" class="headerlink" title="方法3、队列"></a>方法3、队列</h2><p>队列的特点：先进先出。适合用来找第一次满足某个条件的元素。</p>
+<p>思路：创建一个空字典和一个空队列。</p>
+<p>遍历第一次，（只需要遍历一次）</p>
+<p>如果字符不在字典中。字典存储字符和索引；二维队列存储字符和索引。</p>
+<p>如果字符在字典中，字典字符的索引赋为-1，且二维队列中如字符存在队列首位，pop掉。</p>
+<p>遍历完毕，输出队列首位的索引。</p>
+<p>时间复杂度和空间复杂度同1。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">firstUniqChar</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 哈希表存储字符索引, 队列存储索引，先进先出</span></span><br><span class="line">        di = <span class="built_in">dict</span>()</span><br><span class="line">        q = collections.deque()</span><br><span class="line">        <span class="keyword">for</span> i,x <span class="keyword">in</span> <span class="built_in">enumerate</span>(s):</span><br><span class="line">            <span class="keyword">if</span> x <span class="keyword">not</span> <span class="keyword">in</span> di:</span><br><span class="line">                di[x] = i</span><br><span class="line">                q.append((x,i))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                di[x]=-<span class="number">1</span></span><br><span class="line">                <span class="keyword">while</span> q <span class="keyword">and</span> di[q[<span class="number">0</span>][<span class="number">0</span>]] == -<span class="number">1</span>:</span><br><span class="line">                    q.popleft()</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span> <span class="keyword">if</span> <span class="keyword">not</span> q <span class="keyword">else</span> q[<span class="number">0</span>][<span class="number">1</span>]    </span><br></pre></td></tr></table></figure>
+
+
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2022/03/05/13.%20%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">13、整数反转</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="https://yunbujian.github.io">云不见</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="https://yunbujian.github.io/2022/03/07/14.%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6/">https://yunbujian.github.io/2022/03/07/14.%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="https://yunbujian.github.io">云不见</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="https://yunbujian.github.io">云不见</a> Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> |
+            <a target="_blank" rel="noopener" href="https://github.com/shixiaohu2206/hexo-theme-huhu">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
