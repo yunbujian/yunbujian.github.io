@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="人生大纲 产品沉淀 数据分析 生活日志" />
+    <meta name="description" content="My Blog." />
+    
+    <title>
+      4.两个数组的交集Ⅱ - ☁ 云不见的空间站
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/blog/style/style.css">
+
+  <meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/blog/atom.xml" title="☁ 云不见的空间站" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%951%E3%80%81%E6%9A%B4%E5%8A%9B%E8%A7%A3%E6%B3%95"><span class="toc-text">方法1、暴力解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%952%E3%80%81%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="toc-text">方法2、哈希表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%953%E3%80%81%E6%8E%92%E5%BA%8F-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-text">方法3、排序+双指针</span></a></li></ol></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/blog/" class="">
+          Home
+        </a>
+        
+        <a href="/blog/archives" class="">
+          Archives
+        </a>
+        
+        <a href="/blog/categories" class="">
+          Categories
+        </a>
+        
+        <a href="/blog/tags" class="">
+          Tags
+        </a>
+        
+        <a href="/blog/friends" class="">
+          Friends
+        </a>
+        
+        <a href="/blog/about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author"></div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author"></div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/blog/" class="">
+            Home
+          </a>
+          
+          <a href="/blog/archives" class="">
+            Archives
+          </a>
+          
+          <a href="/blog/categories" class="">
+            Categories
+          </a>
+          
+          <a href="/blog/tags" class="">
+            Tags
+          </a>
+          
+          <a href="/blog/friends" class="">
+            Friends
+          </a>
+          
+          <a href="/blog/about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/yunbujian" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/" target="_block">
+              <span class="iconfont icon-instagram"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">4.两个数组的交集Ⅱ</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2022/02/23</span>
+        </span>
+
+        
+
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/LeetCode">LeetCode</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你两个整数数组 nums1 和 nums2 ，请你以数组形式返回两数组的交集。返回结果中每个元素出现的次数，应与元素在两个数组中都出现的次数一致（如果出现次数不一致，则考虑取较小值）。可以不考虑输出结果的顺序。</p>
+<p>示例 1：<br>输入：nums1 = [1,2,2,1], nums2 = [2,2]<br>输出：[2,2]<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-arrays-ii">https://leetcode-cn.com/problems/intersection-of-two-arrays-ii</a></p>
+<h2 id="方法1、暴力解法"><a href="#方法1、暴力解法" class="headerlink" title="方法1、暴力解法"></a>方法1、暴力解法</h2><p>思路：遍历nums1，判断各数是否存在于nums2，存在，存入结果，并把该数从nums2划掉；不存在，继续判断下一个数。</p>
+<p>注意：从这个思路可以隐约感受到为什么哈希表法需要-1。</p>
+<p>执行时间：60ms</p>
+<p>时间复杂度：O(mn)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">intersect</span>(<span class="params">self, nums1: <span class="type">List</span>[<span class="built_in">int</span>], nums2: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 暴力解法</span></span><br><span class="line">        r=<span class="built_in">list</span>()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums1:</span><br><span class="line">            <span class="keyword">if</span> i <span class="keyword">in</span> nums2:</span><br><span class="line">                r.append(i)</span><br><span class="line">                nums2.remove(i)</span><br><span class="line">        <span class="keyword">return</span> r</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="方法2、哈希表"><a href="#方法2、哈希表" class="headerlink" title="方法2、哈希表"></a>方法2、哈希表</h2><p>思路总结：</p>
+<p>1、排序，先处理更短的list；<br>2、new一个哈希表，存放数组1各数字出现的次数；（collections.Counter()即可实现）<br>3、遍历数组2，如果哈希表存在该数，取出为输出结果；并且哈希表该数出现次数-1；如果出现次数=0了（没得减了），就pop掉该数。</p>
+<p>为什么减1，我的理解是第一个数组遍历完，最多出现次数只能和数组1一致，多了也没用了</p>
+<p>注意：:= 海象运算符。</p>
+<p><strong>执行用时：36 ms</strong></p>
+<p>时间复杂度：O(m+n)，m,n为两数组的长度，需遍历两数组并操作哈希表。哈希表操作时间复杂度为O(1)</p>
+<p>空间复杂度：O(min(m,n))，哈希表不超过较短的list，返回结果的list也不超过较短的list。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">intersect</span>(<span class="params">self, nums1: <span class="type">List</span>[<span class="built_in">int</span>], nums2: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 哈希表</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums1)&gt;<span class="built_in">len</span>(nums2):</span><br><span class="line">            <span class="keyword">return</span> self.intersect(nums2, nums1)</span><br><span class="line">        r = <span class="built_in">list</span>()</span><br><span class="line">        d = collections.Counter()  </span><br><span class="line">        <span class="comment"># 也可以直接用d = collections.Counter(nums1)</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums1:</span><br><span class="line">            d[num]+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums2:</span><br><span class="line">            <span class="keyword">if</span> (count := d.get(i,<span class="number">0</span>)) &gt;<span class="number">0</span>:</span><br><span class="line">                r.append(i)</span><br><span class="line">                d[i] -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> d[i]==<span class="number">0</span>:</span><br><span class="line">                    d.pop(i)</span><br><span class="line">        <span class="keyword">return</span> r</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="方法3、排序-双指针"><a href="#方法3、排序-双指针" class="headerlink" title="方法3、排序+双指针"></a>方法3、排序+双指针</h2><p>思路：</p>
+<p>1、两数组先排序。<br>2、设置两个指针分别对应两数组的头。<br>3、从左往后依次判断是否相等，不相等，较小的那个数组指针+1。<br>4、直到某一数组溢出，停止。</p>
+<p>执行时间：40ms</p>
+<p>时间复杂度：O(mlogm+nlogn)，排序需要O(mlogm+nlogn)，遍历两个数组需要O(m+n)。</p>
+<p>空间复杂度：O(min(m,n))，返回结果的数组不超过较短的数组。</p>
+<p>注意：推荐方法2，因为方法2的nums2只需查询操作，读取部分数据即可。</p>
+<p>磁盘空间有限，而方法3排序需要加载nums2所有元素到内存中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">intersect</span>(<span class="params">self, nums1: <span class="type">List</span>[<span class="built_in">int</span>], nums2: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 排序+双指针</span></span><br><span class="line">        nums1.sort()</span><br><span class="line">        nums2.sort()</span><br><span class="line">        len1, len2 = <span class="built_in">len</span>(nums1), <span class="built_in">len</span>(nums2)</span><br><span class="line">        r = <span class="built_in">list</span>()</span><br><span class="line">        idx1=idx2=<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> idx1&lt;len1 <span class="keyword">and</span> idx2&lt;len2:</span><br><span class="line">            <span class="keyword">if</span> nums1[idx1] &lt; nums2[idx2]:</span><br><span class="line">                idx1 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> nums1[idx1] &gt; nums2[idx2]:</span><br><span class="line">                idx2 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r.append(nums1[idx1])</span><br><span class="line">                idx1 += <span class="number">1</span></span><br><span class="line">                idx2 += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> r</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/blog/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/blog/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/blog/2022/02/24/5.%E5%8A%A0%E4%B8%80/">加一</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/blog/2022/02/22/3.%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/">3.存在重复元素</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="https://yunbujian.github.io">云不见</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="https://yunbujian.github.io/blog/2022/02/23/4.%20%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86%20II/">https://yunbujian.github.io/blog/2022/02/23/4.%20%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86%20II/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="https://yunbujian.github.io">云不见</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="https://yunbujian.github.io">云不见</a> Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> |
+            <a target="_blank" rel="noopener" href="https://github.com/shixiaohu2206/hexo-theme-huhu">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

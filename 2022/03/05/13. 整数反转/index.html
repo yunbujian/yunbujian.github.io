@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="人生大纲 产品沉淀 数据分析 生活日志" />
+    <meta name="description" content="My Blog." />
+    
+    <title>
+      13、整数反转 - ☁ 云不见的空间站
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/blog/style/style.css">
+
+  <meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/blog/atom.xml" title="☁ 云不见的空间站" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%A1%88%E4%BE%8B"><span class="toc-text">错误案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5"><span class="toc-text">特殊情况</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/blog/" class="">
+          Home
+        </a>
+        
+        <a href="/blog/archives" class="">
+          Archives
+        </a>
+        
+        <a href="/blog/categories" class="">
+          Categories
+        </a>
+        
+        <a href="/blog/tags" class="">
+          Tags
+        </a>
+        
+        <a href="/blog/friends" class="">
+          Friends
+        </a>
+        
+        <a href="/blog/about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author"></div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author"></div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/blog/" class="">
+            Home
+          </a>
+          
+          <a href="/blog/archives" class="">
+            Archives
+          </a>
+          
+          <a href="/blog/categories" class="">
+            Categories
+          </a>
+          
+          <a href="/blog/tags" class="">
+            Tags
+          </a>
+          
+          <a href="/blog/friends" class="">
+            Friends
+          </a>
+          
+          <a href="/blog/about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/yunbujian" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/" target="_block">
+              <span class="iconfont icon-instagram"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">13、整数反转</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2022/03/05</span>
+        </span>
+
+        
+
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/字符串">字符串</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个 32 位的有符号整数 x ，返回将 x 中的数字部分反转后的结果。</p>
+<p>如果反转后整数<strong>超过 32 位的有符号整数的范围 [−231,  231 − 1] ，就返回 0。</strong></p>
+<p>假设环境不允许存储 64 位整数（有符号或无符号）。</p>
+<p>示例 1：</p>
+<p>输入：x = 123<br>输出：321<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-integer">https://leetcode-cn.com/problems/reverse-integer</a></p>
+<h3 id="错误案例"><a href="#错误案例" class="headerlink" title="错误案例"></a>错误案例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverse</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        a = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> x!=<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> x&lt;<span class="number">0</span>:</span><br><span class="line">                b = x % <span class="number">10</span> - <span class="number">10</span>  <span class="comment"># 想解决负数输入情况，但末尾=0时不行，见特殊情况</span></span><br><span class="line">                x = x // <span class="number">10</span> + <span class="number">1</span>  <span class="comment"># 想解决负数情况，但末尾=0时不行。</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                b = x % <span class="number">10</span></span><br><span class="line">                x //= <span class="number">10</span></span><br><span class="line">            a = a * <span class="number">10</span> + b </span><br><span class="line">        <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
+
+<p>注：/除法；//除法向下取整。 1423/10=142.3; 1423//10=142</p>
+<h3 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h3><p>正数取余 % 返回末尾数字，如123%10=3；但负数取余 %，返回[0,9)数字，如-123%10=7。（想得到末尾-3，但是不能单纯的-10）。因为当末尾本身就是0，无论正负返回还是0。如-100%10=0。-10 就错了。</p>
+<p>取模：% 返回除法的余数。</p>
+<p>当数字&lt;0 and 末尾!=0时，-123%10-10=-3.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverse</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        a = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> x!=<span class="number">0</span>:</span><br><span class="line">            b = x % <span class="number">10</span></span><br><span class="line">            <span class="keyword">if</span> x&lt;<span class="number">0</span> <span class="keyword">and</span> b != <span class="number">0</span>:  <span class="comment"># 负数，且末尾不为0时</span></span><br><span class="line">                b = x % <span class="number">10</span> - <span class="number">10</span></span><br><span class="line">            x = (x-b) // <span class="number">10</span>  <span class="comment"># 取整。-b去掉末尾数的影响。</span></span><br><span class="line">            a = a * <span class="number">10</span> + b </span><br><span class="line">        <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
+
+<p>取整。-b去掉末尾数的影响：123//10=12; -123//10=-13（X）。<strong>去掉末尾数的影响</strong>，(123-3)//10=12; (-123-(-3))//10=-12。即(x-b) // 10</p>
+<p>题中还有一个条件：超过 32 位的有符号整数的范围 [−2^31^,  2^31^ − 1] ，就返回 0。于是改进如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverse</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        MIN, MAX = -<span class="number">2</span>**<span class="number">31</span>, <span class="number">2</span>**<span class="number">31</span>-<span class="number">1</span></span><br><span class="line">        a = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> x!=<span class="number">0</span>:</span><br><span class="line">            b = x % <span class="number">10</span></span><br><span class="line">            <span class="keyword">if</span> x&lt;<span class="number">0</span> <span class="keyword">and</span> b != <span class="number">0</span>: </span><br><span class="line">                b = x % <span class="number">10</span> - <span class="number">10</span></span><br><span class="line">            x = (x-b) // <span class="number">10</span> </span><br><span class="line">            a = a * <span class="number">10</span> + b </span><br><span class="line">        <span class="keyword">if</span> a&lt;MIN <span class="keyword">or</span> a&gt;MAX:  <span class="comment"># 判断有无超过32位</span></span><br><span class="line">   			<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
+
+<p>但是环境不允许存储 64 位整数（有符号或无符号）。也就是说<strong>a已经超过了32位，不能直接存储并和MAX，MIN比较大小。</strong></p>
+<p>尽量不要对边界进行加减，以防越界。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reverse</span>(<span class="params">self, x: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        MIN, MAX = -<span class="number">2</span>**<span class="number">31</span>, <span class="number">2</span>**<span class="number">31</span>-<span class="number">1</span></span><br><span class="line">        a = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> x!=<span class="number">0</span>:</span><br><span class="line">            b = x % <span class="number">10</span></span><br><span class="line">            <span class="keyword">if</span> a &gt; MAX//<span class="number">10</span> <span class="keyword">or</span> (a == MAX//<span class="number">10</span> <span class="keyword">and</span> b &gt; <span class="number">7</span>):  <span class="comment"># 只需要比较前九位</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> a &lt; (MIN+<span class="number">8</span>)//<span class="number">10</span> <span class="keyword">or</span> (a == (MIN+<span class="number">8</span>)//<span class="number">10</span> <span class="keyword">and</span> b &lt; -<span class="number">8</span>):  <span class="comment"># 负数向下取整的问题，排除末尾的影响。</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> x&lt;<span class="number">0</span> <span class="keyword">and</span> b != <span class="number">0</span>:</span><br><span class="line">                b = x % <span class="number">10</span> - <span class="number">10</span></span><br><span class="line">            x = (x-b) // <span class="number">10</span></span><br><span class="line">            a = a * <span class="number">10</span> + b </span><br><span class="line">        <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
+
+<p>MIN = -2147483648</p>
+<p>MAX = 2147483647</p>
+<p>只需要比较：前九位。</p>
+<p>时间复杂度：O(log|x|)。翻转次数即x十进制的位数。（看不懂…)</p>
+<p>空间复杂度：O(1)</p>
+
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/blog/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/blog/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/blog/2022/03/07/14.%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6/">14、字符串中的第一个唯一字符</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/blog/2022/03/04/12.%20%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/">12、反转字符串</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="https://yunbujian.github.io">云不见</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="https://yunbujian.github.io/blog/2022/03/05/13.%20%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">https://yunbujian.github.io/blog/2022/03/05/13.%20%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="https://yunbujian.github.io">云不见</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2022
+            <a href="https://yunbujian.github.io">云不见</a> Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> |
+            <a target="_blank" rel="noopener" href="https://github.com/shixiaohu2206/hexo-theme-huhu">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
