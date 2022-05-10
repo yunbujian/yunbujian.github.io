@@ -7,7 +7,7 @@
     <meta name="description" content="My Blog." />
     
     <title>
-          ☁ YunBJ
+      Hello World - ☁ YunBJ
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -18,6 +18,11 @@
 </head>
   <body>
     <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    </div>
     
     <div id="fixed-menu-wrap">
       <span class="iconfont icon-sousuo search-box menu-reset"></span>
@@ -155,125 +160,93 @@
     </div>
     <div id="container">
       <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Hello World</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2022/02/19</span>
+        </span>
+
         
-<div class="posts">
-  <ul>
-     
 
-    
+        
+        
+        
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-  <li class="item">
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-      
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="describe">
-        <div class="title">
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2022/02/19/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C">1.两数之和</a>
+        
+    </div>
+    <div class="item right">
+        
           <a href="/2022/02/17/%E7%9F%AD%E6%9A%82%E7%A6%BB%E5%AE%B6">短暂离家</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>22/02/17</span>
-        </div>
         
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
+    </div>
+  </div>
 
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/随笔">随笔</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2022/02/17/%E7%9F%AD%E6%9A%82%E7%A6%BB%E5%AE%B6">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2022/02/17/%E7%9F%AD%E6%9A%82%E7%A6%BB%E5%AE%B6">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2022/02/17/%E7%9F%AD%E6%9A%82%E7%A6%BB%E5%AE%B6">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
+  
 
-    
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="https://yunbujian.github.io">云不见</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="https://yunbujian.github.io/2022/02/19/hello-world">https://yunbujian.github.io/2022/02/19/hello-world</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="https://yunbujian.github.io">云不见</a>的博客，转载请注明出处！
+    </div>
+  </div>
 
-  <li class="item">
+  <div id="comment"></div>
 
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2021/11/20/%E6%88%91%E6%BF%80%E5%8A%A8%E5%9D%8F%E4%BA%86%EF%BC%8C%E6%98%A8%E6%99%9A%E6%84%A3%E6%98%AF%E6%B2%A1%E7%9D%A1%E7%9D%80%E3%80%82">我激动坏了，昨晚愣是没睡着。</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>21/11/20</span>
-        </div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/科研生活">科研生活</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2021/11/20/%E6%88%91%E6%BF%80%E5%8A%A8%E5%9D%8F%E4%BA%86%EF%BC%8C%E6%98%A8%E6%99%9A%E6%84%A3%E6%98%AF%E6%B2%A1%E7%9D%A1%E7%9D%80%E3%80%82">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2021/11/20/%E6%88%91%E6%BF%80%E5%8A%A8%E5%9D%8F%E4%BA%86%EF%BC%8C%E6%98%A8%E6%99%9A%E6%84%A3%E6%98%AF%E6%B2%A1%E7%9D%A1%E7%9D%80%E3%80%82">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2021/11/20/%E6%88%91%E6%BF%80%E5%8A%A8%E5%9D%8F%E4%BA%86%EF%BC%8C%E6%98%A8%E6%99%9A%E6%84%A3%E6%98%AF%E6%B2%A1%E7%9D%A1%E7%9D%80%E3%80%82">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-    
-  </ul>
-</div>
-
-<div class="paginator">
-  <a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-</div>
-
+  
+  
+</article>
         <footer>
           <div class="copyright">
             ©2022

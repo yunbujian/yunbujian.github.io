@@ -7,7 +7,7 @@
     <meta name="description" content="My Blog." />
     
     <title>
-      归档2022 - ☁ YunBJ
+      我激动坏了，昨晚愣是没睡着。 - ☁ YunBJ
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -52,7 +52,7 @@
           首页
         </a>
         
-        <a href="/archives" class="current">
+        <a href="/archives" class="">
           归档
         </a>
         
@@ -106,7 +106,7 @@
             首页
           </a>
           
-          <a href="/archives" class="current">
+          <a href="/archives" class="">
             归档
           </a>
           
@@ -155,124 +155,105 @@
     </div>
     <div id="container">
       <div class="main animated bounceInRight delay-0.7s">
-        <div id="archives">
-    
-        <div class="title">
-            归档 
-             - 2022
-        </div>
-    
-
-
-
-
-    
-    
-    <section class="wrap">
-        <div class="meta">
-            <a href="/archives/2022" >
-                2022
-            </a>
-        </div>
-        <div class="year">
-            
-            <article class="item">
-            <a href="/2022/02/28/8.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II" title="8、买卖股票的最佳时机 II">
-                <span>2022/02/28</span>
-                <span>8、买卖股票的最佳时机 II</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2022/02/26/7.%E5%88%A0%E9%99%A4%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9" title="7、删除有序数组中的重复项">
-                <span>2022/02/26</span>
-                <span>7、删除有序数组中的重复项</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2022/02/26/0.%E6%80%8E%E4%B9%88%E5%88%B7%E9%A2%98%EF%BC%9F" title="0. 怎么刷题？刷哪些题？">
-                <span>2022/02/26</span>
-                <span>0. 怎么刷题？刷哪些题？</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2022/02/26/6.%20%E7%A7%BB%E5%8A%A8%E9%9B%B6" title="6、移动零">
-                <span>2022/02/26</span>
-                <span>6、移动零</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2022/02/24/5.%E5%8A%A0%E4%B8%80" title="加一">
-                <span>2022/02/24</span>
-                <span>加一</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2022/02/23/4.%20%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86%20II" title="4.两个数组的交集Ⅱ">
-                <span>2022/02/23</span>
-                <span>4.两个数组的交集Ⅱ</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2022/02/22/3.%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0" title="3.存在重复元素">
-                <span>2022/02/22</span>
-                <span>3.存在重复元素</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2022/02/20/2.%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97" title="2.只出现一次的数字">
-                <span>2022/02/20</span>
-                <span>2.只出现一次的数字</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2022/02/19/1.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C" title="1.两数之和">
-                <span>2022/02/19</span>
-                <span>1.两数之和</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2022/02/19/hello-world" title="Hello World">
-                <span>2022/02/19</span>
-                <span>Hello World</span>
-            </a>
-            </article>
-            
-    
-        </div>
-    </section>
+        <article class="post-entry">
+    <div class="header">
       
-<div class="paginator">
-    <a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2022/page/3/">3</a>
-</div>
-</div>
+      <div class="title">我激动坏了，昨晚愣是没睡着。</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2021/11/20</span>
+        </span>
 
+        
+
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/科研生活">科研生活</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>shell脚本也太好用了吧！这才叫解放双手。</p>
+<p>前两个月我还在为模型一个参数一个参数的无脑调参，也没见效果咋样，感觉自己像个机器一样，完全体现不出我的大脑摆在那里除了好看有什么用。（好看万岁）</p>
+<p>而且对于机械化的操作来说，我们人的速度根本比不上计算机。（我是个理科生啊，学编程这么久了啊这种道理不该根深蒂固嘛！）</p>
+<p>我还悲观的以为深度学习就调调参啊，那学习门槛太低了。</p>
+<p>现在觉得自己就是个傻子，白白调参两个月。</p>
+<p>昨天一个朋友丢给我一段shell自动化脚本，直接遍历模型10000遍，枚举所有参数的可能设置，挨个跑一遍模型，自动保存所有模型的参数，你只需要查看哪个模型最好就好了，然后睡觉去吧。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/dCwhicdySicfNN32T1VNgfPAVmUgkfdj6WZW2blOzQrnXrn6lrhLNQjtTKHEhOrAq1WUFrqOxZ5bS0bmnKAzIpwA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>自动生成这样的表格，挑选最好的准确率就完了。</p>
+<p>！！！！！！</p>
+<p>我当时的反映就是这样的！激动坏了！</p>
+<p>我做两个月的活，他一晚上就做好了，还比我做得多得多。</p>
+<p>这效率的提升不是一倍两倍啊，是几千几万倍。</p>
+<p>这就是认知差异带来的结果吧…我第一次跳出来看到自己像个傻逼一样手动调参，还在为自己的小小进步沾沾自喜。</p>
+<p>裂开。</p>
+<p>又一次印证，效率的提高简直是延年益寿。相当于我活一年，人家已经活了几千年…</p>
+<p>怪不得人家还有时间打游戏…</p>
+
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2022/02/17/%E7%9F%AD%E6%9A%82%E7%A6%BB%E5%AE%B6">短暂离家</a>
+        
+    </div>
+    <div class="item right">
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="https://yunbujian.github.io">云不见</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="https://yunbujian.github.io/2021/11/20/%E6%88%91%E6%BF%80%E5%8A%A8%E5%9D%8F%E4%BA%86%EF%BC%8C%E6%98%A8%E6%99%9A%E6%84%A3%E6%98%AF%E6%B2%A1%E7%9D%A1%E7%9D%80%E3%80%82">https://yunbujian.github.io/2021/11/20/%E6%88%91%E6%BF%80%E5%8A%A8%E5%9D%8F%E4%BA%86%EF%BC%8C%E6%98%A8%E6%99%9A%E6%84%A3%E6%98%AF%E6%B2%A1%E7%9D%A1%E7%9D%80%E3%80%82</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="https://yunbujian.github.io">云不见</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
         <footer>
           <div class="copyright">
             ©2022
