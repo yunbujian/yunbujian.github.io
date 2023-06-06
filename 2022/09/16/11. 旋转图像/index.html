@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My Blog.">
+    <title>☁ 云不见的空间站 - 产品 | 数据 | 致力于让过去，有迹可循。</title>
+    
+      <link rel="icon" href="/img/favicon.ico">
+    
+    <meta name="keyword"  content="">
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+      
+<link rel="stylesheet" href="/blog/css/helpers.css">
+    
+    
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  <div class="loading-wrapper" data-loading="true">
+    <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="page" data-filter="true">
+    <div class="head" data-show="true">
+      <header class="head-header">
+  <div class="head-author">
+    <a href="/blog/" class="head-author-link">
+      ☁ 云不见的空间站</a>
+    </div>
+  <div class="head-right">
+    <!-- <div class="head-search">
+      <input class="head-searchK"></input>
+      <span class="head-searchT">
+        Search</span>
+    </div> -->
+    <button class="bar-wrap" id="bar-wrap-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <div class="head-about" id="head-about">
+      
+      <a class="head-about-link" href="/blog/about">
+        关于</a>
+      
+    </div>
+  </div>
+</header>
+
+    </div>
+    <div class="main">
+      <div class="menu-bar-head" id="menu-bar" data-show="false">
+  <ul class="menu-bar-ul">
+    
+      
+      <li class="menu-bar-item">
+          
+            <a href="/blog/archives">
+          
+              <span>Archives</span>
+            </a>
+      </li>
+    
+      
+      <li class="menu-bar-item">
+          
+              <a href="/blog/categories/Posts/">
+          
+              <span>Posts1</span>
+            </a>
+      </li>
+    
+      
+      <li class="menu-bar-item">
+          
+              <a href="/blog/categories/Posts2/">
+          
+              <span>Posts2</span>
+            </a>
+      </li>
+    
+      
+      <li class="menu-bar-item">
+          
+            <a href="/blog/tags">
+          
+              <span>Tags</span>
+            </a>
+      </li>
+    
+    
+      <li class="menu-bar-item">
+        <a href="/blog/about">
+          <span>关于</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+      <article class="post" id="post">
+  <header class="post-head">
+    <h1 class="post-title">
+      <a class="title" href="/blog/2022/09/16/11.%20%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/">
+        11、旋转图像
+      </a>
+    </h1>
+  </header>
+  <div class="post-datetag">
+    <div class="post-date">
+      <time class="post-time" title="2022-09-16 11:57:31" datetime="2022-09-16T03:57:31.000Z" itemprop="datePublished">
+  2022-09-16</time>
+    </div>
+    |
+    <div class="post-tag">
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E6%95%B0%E7%BB%84/" rel="tag">数组</a></li></ul>
+
+    </div>
+    |
+    
+  
+
+    <div class="post-visit">
+      <span id="busuanzi_container_page_pv">
+        <span id="busuanzi_value_page_pv"></span>
+        访问
+      </span>
+    </div>
+
+  
+
+
+  </div>
+
+  
+    <div class="post-word-count">
+      
+
+本文共729字。
+
+    </div>
+  
+
+  
+    <div class="post-cc">
+      版权声明：
+      
+        署名-非商业性使用-相同方式共享 | <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/2.5/cn/">CC BY-NC-SA 2.5 CN</a>
+      
+    </div>
+  
+
+  
+    <div class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc" data-expand="true">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目描述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%96%B9%E6%B3%951%E3%80%81%E4%BD%BF%E7%94%A8%E8%BE%85%E5%8A%A9%E6%95%B0%E7%BB%84"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">方法1、使用辅助数组</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%96%B9%E6%B3%952%E3%80%81%E5%8E%9F%E5%9C%B0%E6%97%8B%E8%BD%AC"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">方法2、原地旋转</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%96%B9%E6%B3%953%E3%80%81%E8%A7%A3%E5%8E%8B%E3%80%81%E9%80%86%E5%BA%8F%E5%8F%96%E5%80%BC"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">方法3、解压、逆序取值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%96%B9%E6%B3%954%E3%80%81%E6%B0%B4%E5%B9%B3%E7%BF%BB%E8%BD%AC%EF%BC%8C%E5%AF%B9%E8%A7%92%E7%BA%BF%E7%BF%BB%E8%BD%AC"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">方法4、水平翻转，对角线翻转</span></a></li></ol></li></ol>
+        </nav>
+        <a class="post-toc-toggle" onclick="toggleToc(this, expend, collapse);" href="javascript:;">
+            展开
+        </a>
+    </div>
+   
+
+
+  <div class="article-entry" itemprop="articleBody">
+    <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><h2 id="方法1、使用辅助数组"><a href="#方法1、使用辅助数组" class="headerlink" title="方法1、使用辅助数组"></a>方法1、使用辅助数组</h2><p>思路：找规律。发现第i行第j列数，旋转之后到达第j行倒数第i列。得到等式：$m[j][l-i-1]&#x3D;m[i][j]$</p>
+<p>时间复杂度：O(n^2^)。n为矩阵边长。</p>
+<p>空间复杂度：O(n^2^)。需要构造辅助数组。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">rotate</span>(<span class="params">self, matrix: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># m = copy.deepcopy(matrix)  # 深拷贝，改变新m不会导致同时改变原matrix</span></span><br><span class="line">        l = <span class="built_in">len</span>(matrix)</span><br><span class="line">        m = [[<span class="number">0</span>]*l <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(l)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(l-<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,l):  <span class="comment"># 正向遍历</span></span><br><span class="line">                m[j][l-<span class="number">1</span>-i] = matrix[i][j]  <span class="comment"># 找规律，第i行第j列的数正好转到了第j行倒数第i列</span></span><br><span class="line">        matrix[:] = m</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="方法2、原地旋转"><a href="#方法2、原地旋转" class="headerlink" title="方法2、原地旋转"></a>方法2、原地旋转</h2><p>思路：观察关键等式：$m[j][l-i-1]&#x3D;m[i][j]$，不断的旋转，得到</p>
+<p>从下旋转到上，发现四个等式一循环。</p>
+<p>$m[i][j]&#x3D;m[l-j-1][i]$</p>
+<p>$m[l-j-1][i]&#x3D;m[l-i-1][l-j-1]$</p>
+<p>$m[l-i-1][l-j-1]&#x3D;m[j][l-i-1]$</p>
+<p>$m[j][l-i-1]&#x3D;m[i][j]$</p>
+<p>时间复杂度：O(n^2^)。遍历$[n&#x2F;2]*[(n+1)&#x2F;2]&#x3D;O(n^2)$</p>
+<p>空间复杂度：O(1)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">rotate</span>(<span class="params">self, matrix: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 原地旋转</span></span><br><span class="line">        n = <span class="built_in">len</span>(matrix)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n//<span class="number">2</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>((n+<span class="number">1</span>)//<span class="number">2</span>):</span><br><span class="line">                matrix[i][j], matrix[n-j-<span class="number">1</span>][i], matrix[n-i-<span class="number">1</span>][n-j-<span class="number">1</span>], matrix[j][n-i-<span class="number">1</span>] = matrix[n-j-<span class="number">1</span>][i], matrix[n-i-<span class="number">1</span>][n-j-<span class="number">1</span>], matrix[j][n-i-<span class="number">1</span>], matrix[i][j]</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:/Users/walkontheway/AppData/Roaming/Typora/typora-user-images/image-20220303135441950.png" alt="image-20220303135441950"></p>
+<h2 id="方法3、解压、逆序取值"><a href="#方法3、解压、逆序取值" class="headerlink" title="方法3、解压、逆序取值"></a>方法3、解压、逆序取值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">rotate</span>(<span class="params">self, matrix: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 解压，相当于转置；然后每行逆序取值。</span></span><br><span class="line">        matrix[:] = <span class="built_in">list</span>(<span class="built_in">zip</span>(*matrix))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(matrix)):</span><br><span class="line">            matrix[i] = matrix[i][::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;a = [1,2,3]</span><br><span class="line">&gt;&gt;&gt; b = [4,5,6]</span><br><span class="line">&gt;&gt;&gt; zipped = zip(a,b)     # 打包为元组的列表</span><br><span class="line">[(1, 4), (2, 5), (3, 6)]</span><br><span class="line">&gt;&gt;&gt; zip(*zipped)          # *zipped 可理解为解压，返回二维矩阵式</span><br><span class="line">[(1, 2, 3), (4, 5, 6)]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>[::-1] 顺序相反操作，逆序取值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&#x27;python&#x27;</span></span><br><span class="line">b=a[::-<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(b) <span class="comment">#nohtyp</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="方法4、水平翻转，对角线翻转"><a href="#方法4、水平翻转，对角线翻转" class="headerlink" title="方法4、水平翻转，对角线翻转"></a>方法4、水平翻转，对角线翻转</h2><p>思路：水平翻转：$m[n-i-1][j]&#x3D;m[i][j]$</p>
+<p>主对角线翻转：$m[j][i]&#x3D;m[i][j]$</p>
+<p>联立方程正好为关键等式：$m[j][n-i-1]&#x3D;m[i][j]$</p>
+<p>时间复杂度：O(n^2^)。每次翻转需要遍历一半的数。</p>
+<p>空间复杂度：O(1)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">rotate</span>(<span class="params">self, matrix: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># 水平翻转，主对角线翻转，正好为关键等式。</span></span><br><span class="line">        n = <span class="built_in">len</span>(matrix)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n//<span class="number">2</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                matrix[n-i-<span class="number">1</span>][j], matrix[i][j] = matrix[i][j], matrix[n-i-<span class="number">1</span>][j]</span><br><span class="line">        <span class="comment"># 主对角线翻转</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i):</span><br><span class="line">                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]</span><br></pre></td></tr></table></figure>
+
+
+  </div>
+</article>
+
+    </div>
+    <footer class="footer-nav">
+      <div class="footer">
+        <div class="back-top" id="back-top" title="Back to top">
+          <i class="icon icon-chevron-bar-up"></i>
+        </div>
+        <span class="footer-msg">
+  
+    <div class="icp">
+      <img src="/img/icp.png" alt="icp备案">
+      <a href="https://beian.miit.gov.cn/" class="icp-text" target="_blank">
+        京ICP备2021005293号
+      </a>
+    </div>
+  
+
+  
+
+  
+  
+
+    <div>
+      <span id="busuanzi_container_site_pv">
+        <span id="busuanzi_value_site_pv"></span> PV
+      </span>
+      <span id="busuanzi_container_site_uv">
+        <span id="busuanzi_value_site_uv"></span> UV
+      </span>
+    </div>
+
+  
+
+
+
+  2020
+  
+  
+    <span class="timeDivide">-</span>
+    2023
+  
+  云不见.
+  Power by
+  <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
+  and
+  <a href="https://github.com/Cerallin/hexo-theme-yuzu"
+      target="_blank" rel="external nofollow" title="v2.3">
+    Theme Yuzu</a>.
+</span>
+
+      </div>
+    </footer>
+    
+
+
+<script src="/blog/js/clipboard/clipboard.min.js"></script>
+
+
+<script src="/blog/js/theme.js"></script>
+
+
+<script src="/blog/js/index.js"></script>
+
+
+
+  
+  <script>
+      expend = "展开";
+      collapse = "收起";
+  </script>
+  
+  
+<script src="/blog/js/toc.js"></script>
+
+
+
+
+
+  </div>
+</body>

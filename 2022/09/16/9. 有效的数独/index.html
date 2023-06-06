@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My Blog.">
+    <title>☁ 云不见的空间站 - 产品 | 数据 | 致力于让过去，有迹可循。</title>
+    
+      <link rel="icon" href="/img/favicon.ico">
+    
+    <meta name="keyword"  content="">
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+      
+<link rel="stylesheet" href="/blog/css/helpers.css">
+    
+    
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  <div class="loading-wrapper" data-loading="true">
+    <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="page" data-filter="true">
+    <div class="head" data-show="true">
+      <header class="head-header">
+  <div class="head-author">
+    <a href="/blog/" class="head-author-link">
+      ☁ 云不见的空间站</a>
+    </div>
+  <div class="head-right">
+    <!-- <div class="head-search">
+      <input class="head-searchK"></input>
+      <span class="head-searchT">
+        Search</span>
+    </div> -->
+    <button class="bar-wrap" id="bar-wrap-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <div class="head-about" id="head-about">
+      
+      <a class="head-about-link" href="/blog/about">
+        关于</a>
+      
+    </div>
+  </div>
+</header>
+
+    </div>
+    <div class="main">
+      <div class="menu-bar-head" id="menu-bar" data-show="false">
+  <ul class="menu-bar-ul">
+    
+      
+      <li class="menu-bar-item">
+          
+            <a href="/blog/archives">
+          
+              <span>Archives</span>
+            </a>
+      </li>
+    
+      
+      <li class="menu-bar-item">
+          
+              <a href="/blog/categories/Posts/">
+          
+              <span>Posts1</span>
+            </a>
+      </li>
+    
+      
+      <li class="menu-bar-item">
+          
+              <a href="/blog/categories/Posts2/">
+          
+              <span>Posts2</span>
+            </a>
+      </li>
+    
+      
+      <li class="menu-bar-item">
+          
+            <a href="/blog/tags">
+          
+              <span>Tags</span>
+            </a>
+      </li>
+    
+    
+      <li class="menu-bar-item">
+        <a href="/blog/about">
+          <span>关于</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+      <article class="post" id="post">
+  <header class="post-head">
+    <h1 class="post-title">
+      <a class="title" href="/blog/2022/09/16/9.%20%E6%9C%89%E6%95%88%E7%9A%84%E6%95%B0%E7%8B%AC/">
+        9、有效的数独
+      </a>
+    </h1>
+  </header>
+  <div class="post-datetag">
+    <div class="post-date">
+      <time class="post-time" title="2022-09-16 11:57:18" datetime="2022-09-16T03:57:18.000Z" itemprop="datePublished">
+  2022-09-16</time>
+    </div>
+    |
+    <div class="post-tag">
+      
+    </div>
+    |
+    
+  
+
+    <div class="post-visit">
+      <span id="busuanzi_container_page_pv">
+        <span id="busuanzi_value_page_pv"></span>
+        访问
+      </span>
+    </div>
+
+  
+
+
+  </div>
+
+  
+    <div class="post-word-count">
+      
+
+本文共446字。
+
+    </div>
+  
+
+  
+    <div class="post-cc">
+      版权声明：
+      
+        署名-非商业性使用-相同方式共享 | <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/2.5/cn/">CC BY-NC-SA 2.5 CN</a>
+      
+    </div>
+  
+
+  
+    <div class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc" data-expand="true">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%96%B9%E6%B3%951%E3%80%81%E5%93%88%E5%B8%8C%E8%A1%A8%E3%80%81%E4%B8%80%E6%AC%A1%E9%81%8D%E5%8E%86"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法1、哈希表、一次遍历</span></a></li></ol>
+        </nav>
+        <a class="post-toc-toggle" onclick="toggleToc(this, expend, collapse);" href="javascript:;">
+            展开
+        </a>
+    </div>
+   
+
+
+  <div class="article-entry" itemprop="articleBody">
+    <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>请你判断一个 9 x 9 的数独是否有效。只需要 根据以下规则 ，验证已经填入的数字是否有效即可。</p>
+<p>数字 1-9 在每一行只能出现一次。<br>数字 1-9 在每一列只能出现一次。<br>数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。（请参考示例图）</p>
+<p>注意：</p>
+<p>一个有效的数独（部分已被填充）不一定是可解的。<br>只需要根据以上规则，验证已经填入的数字是否有效即可。<br>空白格用 ‘.’ 表示。</p>
+<img src="C:/Users/walkontheway/AppData/Roaming/Typora/typora-user-images/image-20220301160146362.png" alt="image-20220301160146362" style="zoom:50%;" />
+
+
+<p>示例 1：</p>
+<p>输入：board &#x3D;<br>[[“5”,”3”,”.”,”.”,”7”,”.”,”.”,”.”,”.”]<br>,[“6”,”.”,”.”,”1”,”9”,”5”,”.”,”.”,”.”]<br>,[“.”,”9”,”8”,”.”,”.”,”.”,”.”,”6”,”.”]<br>,[“8”,”.”,”.”,”.”,”6”,”.”,”.”,”.”,”3”]<br>,[“4”,”.”,”.”,”8”,”.”,”3”,”.”,”.”,”1”]<br>,[“7”,”.”,”.”,”.”,”2”,”.”,”.”,”.”,”6”]<br>,[“.”,”6”,”.”,”.”,”.”,”.”,”2”,”8”,”.”]<br>,[“.”,”.”,”.”,”4”,”1”,”9”,”.”,”.”,”5”]<br>,[“.”,”.”,”.”,”.”,”8”,”.”,”.”,”7”,”9”]]<br>输出：true<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-sudoku">https://leetcode-cn.com/problems/valid-sudoku</a></p>
+<h2 id="方法1、哈希表、一次遍历"><a href="#方法1、哈希表、一次遍历" class="headerlink" title="方法1、哈希表、一次遍历"></a>方法1、哈希表、一次遍历</h2><p>思路：利用defaultdict(set)，建立一个哈希表，key为行or列；value是一个set，可以存放多个数据。</p>
+<p><code>from collections import defaultdict</code></p>
+<p><code>r=defaultdict(set)</code></p>
+<p>key：0,1,2…表示第几行or第几列。</p>
+<p>value为一个set，存放数据，若已存在相同数据，返回False。</p>
+<p>时间复杂度：O(1)。对81个数遍历一次。</p>
+<p>空间复杂度：O(1)。哈希表存放数据量固定。</p>
+<p>注意：&#x2F;&#x2F;: 返回商的整数部分，向下取整。数字在哪一块3x3 的宫内：i&#x2F;&#x2F;3*3+j&#x2F;&#x2F;3。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isValidSudoku</span>(<span class="params">self, board: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">str</span>]]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        row, col, sqrt = defaultdict(<span class="built_in">set</span>), defaultdict(<span class="built_in">set</span>), defaultdict(<span class="built_in">set</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">9</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">9</span>):</span><br><span class="line">                val = board[i][j]  <span class="comment"># 遍历所有的数</span></span><br><span class="line">                <span class="keyword">if</span> val == <span class="string">&#x27;.&#x27;</span>:</span><br><span class="line">                    <span class="keyword">continue</span>  <span class="comment"># 跳过没有数的空格</span></span><br><span class="line">                point = i//<span class="number">3</span>*<span class="number">3</span>+j//<span class="number">3</span></span><br><span class="line">                <span class="keyword">if</span> val <span class="keyword">in</span> row[i] <span class="keyword">or</span> val <span class="keyword">in</span> col[j] <span class="keyword">or</span> val <span class="keyword">in</span> sqrt[point]:</span><br><span class="line">                    <span class="built_in">print</span>(i,j,point)</span><br><span class="line">                    <span class="built_in">print</span>(row,col,sqrt)</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">                row[i].add(val)</span><br><span class="line">                col[j].add(val)</span><br><span class="line">                sqrt[point].add(val)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+
+  </div>
+</article>
+
+    </div>
+    <footer class="footer-nav">
+      <div class="footer">
+        <div class="back-top" id="back-top" title="Back to top">
+          <i class="icon icon-chevron-bar-up"></i>
+        </div>
+        <span class="footer-msg">
+  
+    <div class="icp">
+      <img src="/img/icp.png" alt="icp备案">
+      <a href="https://beian.miit.gov.cn/" class="icp-text" target="_blank">
+        京ICP备2021005293号
+      </a>
+    </div>
+  
+
+  
+
+  
+  
+
+    <div>
+      <span id="busuanzi_container_site_pv">
+        <span id="busuanzi_value_site_pv"></span> PV
+      </span>
+      <span id="busuanzi_container_site_uv">
+        <span id="busuanzi_value_site_uv"></span> UV
+      </span>
+    </div>
+
+  
+
+
+
+  2020
+  
+  
+    <span class="timeDivide">-</span>
+    2023
+  
+  云不见.
+  Power by
+  <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
+  and
+  <a href="https://github.com/Cerallin/hexo-theme-yuzu"
+      target="_blank" rel="external nofollow" title="v2.3">
+    Theme Yuzu</a>.
+</span>
+
+      </div>
+    </footer>
+    
+
+
+<script src="/blog/js/clipboard/clipboard.min.js"></script>
+
+
+<script src="/blog/js/theme.js"></script>
+
+
+<script src="/blog/js/index.js"></script>
+
+
+
+  
+  <script>
+      expend = "展开";
+      collapse = "收起";
+  </script>
+  
+  
+<script src="/blog/js/toc.js"></script>
+
+
+
+
+
+  </div>
+</body>

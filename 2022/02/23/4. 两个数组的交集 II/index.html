@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My Blog.">
+    <title>☁ 云不见的空间站 - 产品 | 数据 | 致力于让过去，有迹可循。</title>
+    
+      <link rel="icon" href="/img/favicon.ico">
+    
+    <meta name="keyword"  content="">
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+      
+<link rel="stylesheet" href="/blog/css/helpers.css">
+    
+    
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  <div class="loading-wrapper" data-loading="true">
+    <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="page" data-filter="true">
+    <div class="head" data-show="true">
+      <header class="head-header">
+  <div class="head-author">
+    <a href="/blog/" class="head-author-link">
+      ☁ 云不见的空间站</a>
+    </div>
+  <div class="head-right">
+    <!-- <div class="head-search">
+      <input class="head-searchK"></input>
+      <span class="head-searchT">
+        Search</span>
+    </div> -->
+    <button class="bar-wrap" id="bar-wrap-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <div class="head-about" id="head-about">
+      
+      <a class="head-about-link" href="/blog/about">
+        关于</a>
+      
+    </div>
+  </div>
+</header>
+
+    </div>
+    <div class="main">
+      <div class="menu-bar-head" id="menu-bar" data-show="false">
+  <ul class="menu-bar-ul">
+    
+      
+      <li class="menu-bar-item">
+          
+            <a href="/blog/archives">
+          
+              <span>Archives</span>
+            </a>
+      </li>
+    
+      
+      <li class="menu-bar-item">
+          
+              <a href="/blog/categories/Posts/">
+          
+              <span>Posts1</span>
+            </a>
+      </li>
+    
+      
+      <li class="menu-bar-item">
+          
+              <a href="/blog/categories/Posts2/">
+          
+              <span>Posts2</span>
+            </a>
+      </li>
+    
+      
+      <li class="menu-bar-item">
+          
+            <a href="/blog/tags">
+          
+              <span>Tags</span>
+            </a>
+      </li>
+    
+    
+      <li class="menu-bar-item">
+        <a href="/blog/about">
+          <span>关于</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+      <article class="post" id="post">
+  <header class="post-head">
+    <h1 class="post-title">
+      <a class="title" href="/blog/2022/02/23/4.%20%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86%20II/">
+        4.两个数组的交集Ⅱ
+      </a>
+    </h1>
+  </header>
+  <div class="post-datetag">
+    <div class="post-date">
+      <time class="post-time" title="2022-02-23 00:00:00" datetime="2022-02-22T16:00:00.000Z" itemprop="datePublished">
+  2022-02-23</time>
+    </div>
+    |
+    <div class="post-tag">
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/LeetCode/" rel="tag">LeetCode</a></li></ul>
+
+    </div>
+    |
+    
+  
+
+    <div class="post-visit">
+      <span id="busuanzi_container_page_pv">
+        <span id="busuanzi_value_page_pv"></span>
+        访问
+      </span>
+    </div>
+
+  
+
+
+  </div>
+
+  
+    <div class="post-word-count">
+      
+
+本文共786字。
+
+    </div>
+  
+
+  
+    <div class="post-cc">
+      版权声明：
+      
+        署名-非商业性使用-相同方式共享 | <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/2.5/cn/">CC BY-NC-SA 2.5 CN</a>
+      
+    </div>
+  
+
+  
+    <div class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc" data-expand="true">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目描述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%96%B9%E6%B3%951%E3%80%81%E6%9A%B4%E5%8A%9B%E8%A7%A3%E6%B3%95"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">方法1、暴力解法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%96%B9%E6%B3%952%E3%80%81%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">方法2、哈希表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%96%B9%E6%B3%953%E3%80%81%E6%8E%92%E5%BA%8F-%E5%8F%8C%E6%8C%87%E9%92%88"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">方法3、排序+双指针</span></a></li></ol></li></ol>
+        </nav>
+        <a class="post-toc-toggle" onclick="toggleToc(this, expend, collapse);" href="javascript:;">
+            展开
+        </a>
+    </div>
+   
+
+
+  <div class="article-entry" itemprop="articleBody">
+    <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你两个整数数组 nums1 和 nums2 ，请你以数组形式返回两数组的交集。返回结果中每个元素出现的次数，应与元素在两个数组中都出现的次数一致（如果出现次数不一致，则考虑取较小值）。可以不考虑输出结果的顺序。</p>
+<p>示例 1：<br>输入：nums1 &#x3D; [1,2,2,1], nums2 &#x3D; [2,2]<br>输出：[2,2]<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/intersection-of-two-arrays-ii">https://leetcode-cn.com/problems/intersection-of-two-arrays-ii</a></p>
+<h2 id="方法1、暴力解法"><a href="#方法1、暴力解法" class="headerlink" title="方法1、暴力解法"></a>方法1、暴力解法</h2><p>思路：遍历nums1，判断各数是否存在于nums2，存在，存入结果，并把该数从nums2划掉；不存在，继续判断下一个数。</p>
+<p>注意：从这个思路可以隐约感受到为什么哈希表法需要-1。</p>
+<p>执行时间：60ms</p>
+<p>时间复杂度：O(mn)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">intersect</span>(<span class="params">self, nums1: <span class="type">List</span>[<span class="built_in">int</span>], nums2: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 暴力解法</span></span><br><span class="line">        r=<span class="built_in">list</span>()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums1:</span><br><span class="line">            <span class="keyword">if</span> i <span class="keyword">in</span> nums2:</span><br><span class="line">                r.append(i)</span><br><span class="line">                nums2.remove(i)</span><br><span class="line">        <span class="keyword">return</span> r</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="方法2、哈希表"><a href="#方法2、哈希表" class="headerlink" title="方法2、哈希表"></a>方法2、哈希表</h2><p>思路总结：</p>
+<p>1、排序，先处理更短的list；<br>2、new一个哈希表，存放数组1各数字出现的次数；（collections.Counter()即可实现）<br>3、遍历数组2，如果哈希表存在该数，取出为输出结果；并且哈希表该数出现次数-1；如果出现次数&#x3D;0了（没得减了），就pop掉该数。</p>
+<p>为什么减1，我的理解是第一个数组遍历完，最多出现次数只能和数组1一致，多了也没用了</p>
+<p>注意：:&#x3D; 海象运算符。</p>
+<p><strong>执行用时：36 ms</strong></p>
+<p>时间复杂度：O(m+n)，m,n为两数组的长度，需遍历两数组并操作哈希表。哈希表操作时间复杂度为O(1)</p>
+<p>空间复杂度：O(min(m,n))，哈希表不超过较短的list，返回结果的list也不超过较短的list。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">intersect</span>(<span class="params">self, nums1: <span class="type">List</span>[<span class="built_in">int</span>], nums2: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 哈希表</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(nums1)&gt;<span class="built_in">len</span>(nums2):</span><br><span class="line">            <span class="keyword">return</span> self.intersect(nums2, nums1)</span><br><span class="line">        r = <span class="built_in">list</span>()</span><br><span class="line">        d = collections.Counter()  </span><br><span class="line">        <span class="comment"># 也可以直接用d = collections.Counter(nums1)</span></span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums1:</span><br><span class="line">            d[num]+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums2:</span><br><span class="line">            <span class="keyword">if</span> (count := d.get(i,<span class="number">0</span>)) &gt;<span class="number">0</span>:</span><br><span class="line">                r.append(i)</span><br><span class="line">                d[i] -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> d[i]==<span class="number">0</span>:</span><br><span class="line">                    d.pop(i)</span><br><span class="line">        <span class="keyword">return</span> r</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="方法3、排序-双指针"><a href="#方法3、排序-双指针" class="headerlink" title="方法3、排序+双指针"></a>方法3、排序+双指针</h2><p>思路：</p>
+<p>1、两数组先排序。<br>2、设置两个指针分别对应两数组的头。<br>3、从左往后依次判断是否相等，不相等，较小的那个数组指针+1。<br>4、直到某一数组溢出，停止。</p>
+<p>执行时间：40ms</p>
+<p>时间复杂度：O(mlogm+nlogn)，排序需要O(mlogm+nlogn)，遍历两个数组需要O(m+n)。</p>
+<p>空间复杂度：O(min(m,n))，返回结果的数组不超过较短的数组。</p>
+<p>注意：推荐方法2，因为方法2的nums2只需查询操作，读取部分数据即可。</p>
+<p>磁盘空间有限，而方法3排序需要加载nums2所有元素到内存中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">intersect</span>(<span class="params">self, nums1: <span class="type">List</span>[<span class="built_in">int</span>], nums2: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># 排序+双指针</span></span><br><span class="line">        nums1.sort()</span><br><span class="line">        nums2.sort()</span><br><span class="line">        len1, len2 = <span class="built_in">len</span>(nums1), <span class="built_in">len</span>(nums2)</span><br><span class="line">        r = <span class="built_in">list</span>()</span><br><span class="line">        idx1=idx2=<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> idx1&lt;len1 <span class="keyword">and</span> idx2&lt;len2:</span><br><span class="line">            <span class="keyword">if</span> nums1[idx1] &lt; nums2[idx2]:</span><br><span class="line">                idx1 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> nums1[idx1] &gt; nums2[idx2]:</span><br><span class="line">                idx2 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r.append(nums1[idx1])</span><br><span class="line">                idx1 += <span class="number">1</span></span><br><span class="line">                idx2 += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> r</span><br></pre></td></tr></table></figure>
+
+
+
+
+  </div>
+</article>
+
+    </div>
+    <footer class="footer-nav">
+      <div class="footer">
+        <div class="back-top" id="back-top" title="Back to top">
+          <i class="icon icon-chevron-bar-up"></i>
+        </div>
+        <span class="footer-msg">
+  
+    <div class="icp">
+      <img src="/img/icp.png" alt="icp备案">
+      <a href="https://beian.miit.gov.cn/" class="icp-text" target="_blank">
+        京ICP备2021005293号
+      </a>
+    </div>
+  
+
+  
+
+  
+  
+
+    <div>
+      <span id="busuanzi_container_site_pv">
+        <span id="busuanzi_value_site_pv"></span> PV
+      </span>
+      <span id="busuanzi_container_site_uv">
+        <span id="busuanzi_value_site_uv"></span> UV
+      </span>
+    </div>
+
+  
+
+
+
+  2020
+  
+  
+    <span class="timeDivide">-</span>
+    2023
+  
+  云不见.
+  Power by
+  <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
+  and
+  <a href="https://github.com/Cerallin/hexo-theme-yuzu"
+      target="_blank" rel="external nofollow" title="v2.3">
+    Theme Yuzu</a>.
+</span>
+
+      </div>
+    </footer>
+    
+
+
+<script src="/blog/js/clipboard/clipboard.min.js"></script>
+
+
+<script src="/blog/js/theme.js"></script>
+
+
+<script src="/blog/js/index.js"></script>
+
+
+
+  
+  <script>
+      expend = "展开";
+      collapse = "收起";
+  </script>
+  
+  
+<script src="/blog/js/toc.js"></script>
+
+
+
+
+
+  </div>
+</body>
